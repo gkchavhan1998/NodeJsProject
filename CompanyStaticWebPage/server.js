@@ -23,7 +23,8 @@ const server = http.createServer((req, res) => {
     const data = fs.readFileSync('./employeeData/employee.html');
     res.end(data);
   }else{
-
+    res.statusCode = 404;
+    res.end(`<h1>Error : 404 </h1><h3>Page not found</h3>`)
   }
 
 });
